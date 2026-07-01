@@ -166,6 +166,7 @@ const defaultData = {
     { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
     { label: "Services", href: "#services" },
+    { label: "Resume", href: "#resume" },
     { label: "Contact", href: "#contact" },
   ],
 

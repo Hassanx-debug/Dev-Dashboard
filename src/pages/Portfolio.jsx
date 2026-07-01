@@ -17,6 +17,7 @@ import Testimonials from "../components/sections/Testimonials";
 import Blog from "../components/sections/Blog";
 import OpenTo from "../components/sections/OpenTo";
 import Contact from "../components/sections/Contact";
+import Resume from "../components/sections/Resume";
 import AdminToolbar from "../components/admin/AdminToolbar";
 
 export default function Portfolio() {
@@ -94,6 +95,7 @@ export default function Portfolio() {
         <div ref={sectionRefs.blog} id="blog"><Blog /></div>
         <div ref={sectionRefs.availability} id="availability"><OpenTo /></div>
         <div ref={sectionRefs.contact} id="contact"><Contact /></div>
+        <div id="resume"><Resume /></div>
       </main>
 
       <Footer />
