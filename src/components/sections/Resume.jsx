@@ -7,15 +7,29 @@ import SectionLabel from "../ui/SectionLabel";
 export default function Resume() {
   const { profile = {} } = usePortfolio();
   const resumeBase64 = profile.resumeBase64;
-  const resumeUrl = "/Hassan_BinNisar_Resume.pdf";
+  
+  // Use uploaded resume (base64) if available, otherwise fall back to public file
+  const resumeUrl = resumeBase64 || "/Hassan_BinNisar_Resume.pdf";
+  const hasUploadedResume = !!resumeBase64;
 
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Hassan_BinNisar_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (hasUploadedResume) {
+      // For base64 data URL, convert to blob and download
+      const link = document.createElement("a");
+      link.href = resumeUrl;
+      link.download = "Hassan_BinNisar_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // For public file, use simple download
+      const link = document.createElement("a");
+      link.href = resumeUrl;
+      link.download = "Hassan_BinNisar_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const handleView = () => {
